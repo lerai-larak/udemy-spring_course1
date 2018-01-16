@@ -12,16 +12,12 @@ public class AnnotationDemoApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//get the bean from the spring continer
-//		Coach thatSillyCoach = context.getBean("sillyCoach",Coach.class);
-		
-		//using default bean name issued by container (if not defined in bean component annotation)
-		RugbyCoach rugCoach = context.getBean("rugbyCoach", RugbyCoach.class);
+
+		Coach theCoach = context.getBean("tennisCoach", Coach.class);
 		
 		//call a method on the bean
-//		System.out.println(thatSillyCoach.getDailyWorkout());
-		System.out.println(rugCoach.getDailyWorkout());
-		System.out.println(rugCoach.getDailyFortune());	
-		System.out.println(rugCoach.getPlayers());	
+		System.out.println(theCoach.getDailyFortune());
+		System.out.println(theCoach.getFavoritePlayer());
 		//close the context
 		context.close();
 	}
