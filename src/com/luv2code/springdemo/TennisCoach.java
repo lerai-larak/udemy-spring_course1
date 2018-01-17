@@ -1,10 +1,15 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("tennisCoach")
+//@Scope("prototype") //create a new instance every time
 public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
@@ -12,6 +17,18 @@ public class TennisCoach implements Coach {
 	
 	public TennisCoach() {
 		System.out.println("Inside Tennis coach constructor");
+	}
+	
+	//method will execute after constructor and after injection of dependencies
+	@PostConstruct
+	public void doSomeInitMethod() {
+		System.out.println("Called the @postconstruct method");
+	}
+	
+	//method will execute before bean is destroyed
+	@PreDestroy
+	public void doSomeDestroyMethod() {
+		System.out.println("Called the @predestroy method");
 	}
 	
 	@Autowired
