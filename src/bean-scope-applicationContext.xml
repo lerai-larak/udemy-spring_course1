@@ -7,15 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Define the dependency here -->
-	<bean id="myFortune"
-		class="com.luv2code.springdemo.HappyFortuneService"></bean>
-
-	<!-- configure Coach instances -->
-	<bean id=" " class="com.luv2code.springdemo.TrackballCoach">
-		<!-- configure a bean using constructor injection -->
-		<constructor-arg ref="myFortune" />
-	</bean>
+	<!-- configure Coach instance -->
+	<bean id="myCoach" class="com.luv2code.springdemo.RacingCoach" scope="prototype"></bean>
+	
 </beans>
 
 
