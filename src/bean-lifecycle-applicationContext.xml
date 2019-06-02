@@ -8,8 +8,9 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- configure Coach instance -->
-	<bean id="myCoach" class="com.luv2code.springdemo.RacingCoach" scope="prototype"></bean>
-	
+	<bean id="myCoach" class="com.luv2code.springdemo.TrackballCoach"
+		init-method="doStartupStuff" destroy-method="doCleanupStuff"></bean>
+
 </beans>
 
 

@@ -24,5 +24,16 @@ public class TrackballCoach implements Coach {
 	public String getDailyFortune() {
 		return fs.getFortune();
 	}
+	
+	//add an init method 
+	//this method wil be called by spring in the bean init lifecycle stage 
+	public void doStartupStuff() {
+		System.out.println("Doing some startup things...");
+	}
+	
+	//add a destroy method -- called by spring when destrying bean/context
+	public void doCleanupStuff() {
+		System.out.println("Doing some clean up things...");
+	}
 
 }
