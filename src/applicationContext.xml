@@ -24,6 +24,10 @@
     <property name="emailAddress" value="${xteam.email}"></property>
     <property name="teamName" value="${xteam.name}"></property>
     </bean>
+    
+    <bean id="racingCoach" class="com.luv2code.springdemo.RacingCoach">
+    	
+    </bean>
 </beans>
 
 
